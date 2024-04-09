@@ -1,0 +1,98 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Transparency layer */
+.transparency-layer {
+    position: relative;
+    background-image: url('mountain.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000; /* Change color of text to black */
+}
+
+.logo-container {
+    position: absolute;
+    top: -15px;
+    left: 20px; /* Keep logo in left corner */
+}
+
+.user-container {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Keep user profile in right corner */
+}
+
+.logo {
+    height: 200px; /* Increased logo size */
+}
+
+.user-profile {
+    width: 50px;
+    border-radius: 50%; /* Rounded user profile picture */
+}
+
+.content-container {
+    text-align: center;
+    margin-top: 50px; /* Adjust top margin */
+}
+
+/* Profile info section */
+.profile-info-container {
+    background-color: rgba(255, 255, 255, 0.6); /* Translucent white background */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px; /* Limit width of container */
+    margin-bottom: 20px;
+}
+
+.profile-info-container h2 {
+    font-size: 24px; /* Increased font size for subtitle */
+    margin-bottom: 20px;
+}
+
+.profile-info-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Progress chart section */
+.progress-chart-container {
+    background-color: rgba(255, 255, 255, 0.6); /* Translucent white background */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px; /* Limit width of container */
+    margin-bottom: 20px;
+}
+
+.progress-chart-container h2 {
+    font-size: 24px; /* Increased font size for subtitle */
+    margin-bottom: 20px;
+}
+
+.progress-chart {
+    max-width: 100%; /* Ensure chart image fits within container */
+}
+
+/* Button */
+.button {
+    display: block;
+    margin: 20px auto; /* Adjust vertical margin to position the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a68c4;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}

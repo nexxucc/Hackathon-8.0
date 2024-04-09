@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('mountain.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 50px; /* Adjusted margin top */
+        }
+
+        .chat-message {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .user-message {
+            background-color: #dbf4ff;
+        }
+
+        .bot-message {
+            background-color: #e2e2e2;
+        }
+
+        .input-container {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1a68c4;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #125198;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 50px; /* Adjusted logo height */
+        }
+
+        .user-profile {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="Logo" class="logo">
+    <a href="profile.html"><img src="userpic.jpeg" alt="User Profile" class="user-profile"></a>
+
+    <div class="chat-container">
+        <div class="chat-message bot-message">
+            <p>Talk to me!</p>
+        </div>
+        <!-- Additional messages can be added here -->
+        
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <input type="submit" value="Send" onclick="sendMessage()">
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+            var chatContainer = document.querySelector('.chat-container');
+
+            if (userInput.trim() !== '') {
+                var userMessage = document.createElement('div');
+                userMessage.classList.add('chat-message', 'user-message');
+                userMessage.innerHTML = '<p>' + userInput + '</p>';
+                chatContainer.insertBefore(userMessage, chatContainer.lastElementChild);
+
+                // Check for specific input messages
+                if (userInput.toLowerCase() === 'hello') {
+                    var botMessage = document.createElement('div');
+                    botMessage.classList.add('chat-message', 'bot-message');
+                    botMessage.innerHTML = '<p>Hi Test! How was your day?</p>';
+                    chatContainer.insertBefore(botMessage, chatContainer.lastElementChild);
+                }
+
+                // Clear the input field after sending message
+                document.getElementById('user-input').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

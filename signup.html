@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Out - Sign Up</title>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('mountain.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .login-container {
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            margin-top: -10px;
+        }
+        
+        .login-container img {
+            max-width: 100%;
+            margin-bottom: 10px;
+            margin-top: -20px;
+        }
+        
+        .login-form input[type="text"],
+        .login-form input[type="password"],
+        .login-form input[type="email"] {
+            width: 100%; /* Set width to 100% for all input types */
+            padding: 10px;
+            margin-bottom: 10px; /* Adjusted margin-bottom */
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1a68c4;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .login-form input[type="submit"]:hover {
+            background-color: #125198;
+        }
+        
+        .login-form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        
+        .login-form .options {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .login-form .options a {
+            color: #fff; /* Change the color of the forgot password link to white */
+            text-decoration: none;
+            margin-right: 10px;
+            margin-top: -10px; /* Adjusted margin-top */
+        }
+        
+        .login-form .options a:hover {
+            text-decoration: underline;
+        }
+        
+        .login-form .options .google-btn {
+            background-color: #db4437;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .login-form .options .google-btn:hover {
+            background-color: #c1351a;
+        }
+        
+        .signup-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .divider {
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="login.html" class="signup-link">Sign In</a> <!-- Change link to login.html -->
+    <div class="login-container"> <!-- Use the same container class as the login page -->
+        <img src="logo.png" alt="Chill Out Logo">
+        <form class="login-form" action="home.html" method="post"> <!-- Modify action attribute -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email"> <!-- Change input type to email -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Choose a username">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Choose a password">
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>

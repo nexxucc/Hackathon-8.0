@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Access</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('mountain.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #camera-container {
+            display: none;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 50px;
+        }
+
+        #user-profile {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1a68c4;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #125198;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="logo.png" alt="Logo">
+    <a href="profile.html"><img id="user-profile" src="userpic.jpeg" alt="User Profile"></a>
+
+    <div id="camera-container">
+        <video id="camera-feed" autoplay></video>
+    </div>
+    <button id="start-camera-btn">Start Camera</button>
+
+    <script>
+        const cameraContainer = document.getElementById('camera-container');
+        const cameraFeed = document.getElementById('camera-feed');
+        const startCameraBtn = document.getElementById('start-camera-btn');
+
+        startCameraBtn.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                cameraContainer.style.display = 'block';
+                cameraFeed.srcObject = stream;
+                setTimeout(() => {
+                    alert('User Emotion: Happy/Excited');
+                    setTimeout(() => {
+                        alert('User Emotion: Sad');
+                    }, 2000);
+                }, 5000); // Change timer to 5 seconds
+            } catch (err) {
+                console.error('Error accessing camera:', err);
+                alert('Error accessing camera. Please make sure your camera is connected and enabled.');
+            }
+        });
+    </script>
+</body>
+</html>
